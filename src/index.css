@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600;1,700&family=Open+Sans:wght@400;500;600&display=swap');
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-open-sans: "Open Sans", sans-serif;
+
+  --color-midnight-slate: #0D131A;
+  --color-ocean-blue: #1A2F4B;
+  --color-golden-sand: #D4A373;
+  --color-golden-sunset: #E6AA68;
+  --color-warm-shell: #FAFAF5;
+  --color-soft-silver: #E0E0E0;
+  --color-palm-green: #3A5A40;
+  --color-dusk-slate: #4A4E69;
+}
+
+@layer base {
+  body {
+    @apply bg-warm-shell text-dusk-slate font-open-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-bold text-midnight-slate;
+  }
+}
+
+@layer components {
+  .wavy-separator {
+    @apply w-12 h-2 opacity-40;
+    background-image: url("data:image/svg+xml,%3Csvg width='48' height='8' viewBox='0 0 48 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4C4 4 4 1 8 1C12 1 12 7 16 7C20 7 20 1 24 1C28 1 28 7 32 7C36 7 36 1 40 1C44 1 44 4 48 4' stroke='%23D4A373' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+  }
+
+  /* Liquid Glass - Midnight Style */
+  .liquid-glass {
+    @apply bg-midnight-slate/40 backdrop-blur-md border border-white/10 shadow-sm transition-all duration-300;
+  }
+
+  .btn-salterra {
+    @apply px-8 py-3 rounded-full border border-golden-sunset/40 bg-white/5 backdrop-blur-sm text-golden-sunset text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-golden-sunset hover:text-midnight-slate cursor-pointer;
+  }
+
+  .btn-salterra-solid {
+    @apply px-8 py-3 rounded-full bg-golden-sunset text-midnight-slate text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-white shadow-md cursor-pointer;
+  }
+
+  .numbered-index {
+    @apply w-10 h-10 rounded-full border border-golden-sunset/30 flex items-center justify-center text-golden-sunset text-sm font-light;
+  }
+
+  /* Video Masking to Midnight */
+  .mask-fade-midnight {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .text-shadow-hero {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+}
